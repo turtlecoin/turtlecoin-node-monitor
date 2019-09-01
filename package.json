@@ -1,6 +1,6 @@
 {
   "name": "turtlecoin-node-monitor",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A TurtleCoin public node monitor agent that monitors, polls, and logs public node availability and basic information to MySQL/MariaDB backend.",
   "main": "index.js",
   "bin": "./collector.js",
