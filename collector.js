@@ -26,7 +26,7 @@ const service = new Collector({
   nodeList: process.env.NODE_LIST_URL || 'https://raw.githubusercontent.com/turtlecoin/turtlecoin-nodes-json/master/turtlecoin-nodes.json',
   pollingInterval: process.env.POLLING_INTERVAL || 120,
   updateInterval: process.env.UPDATE_INTERVAL || (60 * 60),
-  historyDays: process.env.HISTORY_DAYS || 7,
+  historyDays: process.env.HISTORY_DAYS || 0.25,
   database: {
     host: process.env.MYSQL_HOST || 'localhost',
     port: process.env.MYSQL_PORT || 3306,
