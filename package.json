@@ -1,24 +1,37 @@
 {
-  "name": "turtlecoin-node-monitor",
-  "version": "0.0.9",
+  "name": "@turtlecoin/node-monitor",
+  "version": "1.0.0",
   "description": "A TurtleCoin public node monitor agent that monitors, polls, and logs public node availability and basic information to MySQL/MariaDB backend.",
-  "main": "index.js",
-  "bin": "./collector.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "standard",
-    "collector": "node ./collector.js"
+    "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Use yarn for installing: https://yarnpkg.com/en/docs/install')\"",
+    "build": "./node_modules/.bin/tsc",
+    "docs": "./node_modules/.bin/typedoc && touch docs/.nojekyll && git restore docs/CNAME",
+    "test": "yarn style",
+    "style": "./node_modules/.bin/eslint src/**/*.ts",
+    "fix-style": "./node_modules/.bin/eslint --fix src/**/*.ts",
+    "prepublishOnly": "yarn build",
+    "start": "node dist/launch.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/turtlecoin/turtlecoin-node-monitor.git"
   },
   "keywords": [
-    "TurtleCoin"
+    "TurtleCoin",
+    "Node",
+    "Monitor",
+    "daemon",
+    "network"
+  ],
+  "files": [
+    "dist/*"
   ],
   "author": "The TurtleCoin Developers",
   "license": "AGPL-3.0",
   "engines": {
-    "node": ">=6"
+    "node": ">=12"
   },
   "engineStrict": true,
   "bugs": {
@@ -26,15 +39,25 @@
   },
   "homepage": "https://github.com/turtlecoin/turtlecoin-node-monitor#readme",
   "dependencies": {
-    "colors": "^1.4.0",
+    "@turtlepay/logger": "^0.0.1",
+    "@types/node-fetch": "^2.5.7",
+    "db-abstraction": "^1.0.4",
     "dotenv": "^8.2.0",
-    "mysql": "^2.18.1",
-    "node-metronome": "^0.0.1",
-    "request": "^2.88.2",
-    "request-promise-native": "^1.0.8",
-    "turtlecoin-rpc": "^2.0.5"
+    "node-fetch": "^2.6.1",
+    "node-metronome": "^0.0.12",
+    "turtlecoin-utils": "^3.0.4"
   },
   "devDependencies": {
-    "standard": "^14.3.4"
+    "@types/node": "^14.11.8",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.3"
   }
 }

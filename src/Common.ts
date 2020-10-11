@@ -1,0 +1,65 @@
+// Copyright (c) 2020, The TurtlePay Developers
+//
+// Please see the included LICENSE file for more information.
+
+import { Postgres, SQLite, MySQL, IDatabase } from 'db-abstraction';
+import { Logger } from '@turtlepay/logger';
+
+/** @ignore */
+require('dotenv').config();
+
+/** @ignore */
+export function checkProduction () {
+    if (!process.env.NODE_ENV || process.env.NODE_ENV.toLowerCase() !== 'production') {
+        Logger.warn('Node.JS is not running in production mode. ' +
+            'Consider running in production mode: export NODE_ENV=production');
+    }
+}
+
+/**
+ * Uses the environment variables or a .env file in the project's root
+ * to determine which underlying database type to use with the package
+ */
+export async function getDatabase (): Promise<IDatabase> {
+    let database;
+
+    const host = process.env.DB_HOST || undefined;
+    const port = (process.env.DB_PORT) ? parseInt(process.env.DB_PORT, 10) : undefined;
+    const user = process.env.DB_USER || undefined;
+    const pass = process.env.DB_PASS || undefined;
+    const db = process.env.DB_NAME || 'turtlecoin';
+
+    if (process.env.USE_MYSQL) {
+        Logger.info('Using MySQL Backend...');
+
+        if (host === undefined || user === undefined || pass === undefined || db === undefined) {
+            console.error('\n\n!! Missing database connection parameters in environment variables !!\n\n');
+
+            process.exit(1);
+        }
+
+        database = new MySQL(host, port || 3306, user, pass, db);
+
+        database.on('error', error => Logger.error(error.toString()));
+    } else if (process.env.USE_POSTGRES) {
+        Logger.info('Using Postgres Backend...');
+
+        if (host === undefined || user === undefined || pass === undefined || db === undefined) {
+            console.error('\n\n!! Missing database connection parameters in environment variables !!\n\n');
+
+            process.exit(1);
+        }
+
+        database = new Postgres(host, port || 5432, user, pass, db);
+
+        database.on('error', error => Logger.error(error.toString()));
+    } else {
+        Logger.info('Using SQLite Backend...');
+
+        database = new SQLite(process.env.SQLITE_PATH || 'node_monitor.sqlite3');
+
+        database.on('error', error => Logger.error(error.toString()));
+    }
+
+    return database;
+}
