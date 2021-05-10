@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TurtleCoin Node Monitor</title>
-	<meta name="description" content="Documentation for TurtleCoin Node Monitor">
+	<title>@turtlecoin/node-monitor</title>
+	<meta name="description" content="Documentation for @turtlecoin/node-monitor">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -22,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">TurtleCoin Node Monitor</a>
+					<a href="index.html" class="title">@turtlecoin/node-monitor</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -47,12 +48,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>TurtleCoin Node Monitor</h1>
+			<h1>@turtlecoin/node-monitor</h1>
 		</div>
 	</div>
 </header>
@@ -84,69 +80,76 @@
 				<a href="#collection-service" id="collection-service" style="color: inherit; text-decoration: none;">
 					<h3>Collection Service</h3>
 				</a>
-				<pre><code class="language-shell">npm install -g yarn
-git clone https://github.com/turtlecoin/turtlecoin-node-monitor
-cd turtlecoin-node-monitor
-yarn &amp;&amp; yarn build</code></pre>
+				<pre><code class="language-shell"><span style="color: #000000">npm install -g yarn</span>
+<span style="color: #000000">git clone https://github.com/turtlecoin/turtlecoin-node-monitor</span>
+<span style="color: #795E26">cd</span><span style="color: #000000"> turtlecoin-node-monitor</span>
+<span style="color: #000000">yarn &amp;&amp; yarn build</span>
+</code></pre>
 				<a href="#mysqlmariadb" id="mysqlmariadb" style="color: inherit; text-decoration: none;">
 					<h4>MySQL/MariaDB</h4>
 				</a>
 				<ol>
 					<li>Set your environment variables and start the service up</li>
 				</ol>
-				<pre><code class="language-sh"><span class="hljs-built_in">export</span> USE_MYSQL=<span class="hljs-literal">true</span>
-<span class="hljs-built_in">export</span> DB_HOST=localhost
-<span class="hljs-built_in">export</span> DB_PORT=3306
-<span class="hljs-built_in">export</span> DB_USER=yourdbusername
-<span class="hljs-built_in">export</span> DB_PASS=yourdbpassword
-<span class="hljs-built_in">export</span> DB_NAME=turtlecoin
-yarn start</code></pre>
+				<pre><code class="language-sh"><span style="color: #0000FF">export</span><span style="color: #000000"> USE_MYSQL=true</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_HOST=localhost</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_PORT=3306</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_USER=yourdbusername</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_PASS=yourdbpassword</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_NAME=turtlecoin</span>
+<span style="color: #000000">yarn start</span>
+</code></pre>
 				<a href="#postgres" id="postgres" style="color: inherit; text-decoration: none;">
 					<h4>Postgres</h4>
 				</a>
 				<ol>
 					<li>Set your environment variables and start the service up</li>
 				</ol>
-				<pre><code class="language-sh"><span class="hljs-built_in">export</span> USE_POSTGRES=<span class="hljs-literal">true</span>
-<span class="hljs-built_in">export</span> DB_HOST=localhost
-<span class="hljs-built_in">export</span> DB_PORT=3306
-<span class="hljs-built_in">export</span> DB_USER=yourdbusername
-<span class="hljs-built_in">export</span> DB_PASS=yourdbpassword
-<span class="hljs-built_in">export</span> DB_NAME=turtlecoin
-yarn start</code></pre>
+				<pre><code class="language-sh"><span style="color: #0000FF">export</span><span style="color: #000000"> USE_POSTGRES=true</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_HOST=localhost</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_PORT=3306</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_USER=yourdbusername</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_PASS=yourdbpassword</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> DB_NAME=turtlecoin</span>
+<span style="color: #000000">yarn start</span>
+</code></pre>
 				<a href="#sqlite" id="sqlite" style="color: inherit; text-decoration: none;">
 					<h4>SQLite</h4>
 				</a>
 				<ol>
 					<li>Set your environment variables and start the service up</li>
 				</ol>
-				<pre><code class="language-sh"><span class="hljs-built_in">export</span> USE_SQLITE=<span class="hljs-literal">true</span>
-<span class="hljs-built_in">export</span> SQLITE_PATH=node-monitor.sqlite3
-yarn start</code></pre>
+				<pre><code class="language-sh"><span style="color: #0000FF">export</span><span style="color: #000000"> USE_SQLITE=true</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> SQLITE_PATH=node-monitor.sqlite3</span>
+<span style="color: #000000">yarn start</span>
+</code></pre>
 				<p><strong>Note:</strong> SQLite is not the best solution if you are running this as part of a web service.</p>
 				<a href="#additional-options" id="additional-options" style="color: inherit; text-decoration: none;">
 					<h4>Additional Options</h4>
 				</a>
-				<pre><code class="language-sh"><span class="hljs-built_in">export</span> NODE_HISTORY_DAYS=&lt;<span class="hljs-comment"># of days to keep history (default: 6 hours)&gt;</span>
-<span class="hljs-built_in">export</span> NODE_UPDATE_INTERVAL=&lt;<span class="hljs-comment"># of seconds between updating node list (default: 1 hour)&gt;</span>
-<span class="hljs-built_in">export</span> NODE_POLLING_INTERVAL=&lt;<span class="hljs-comment"># of seconds between checking nodes (default: 120s)&gt;</span>
-<span class="hljs-built_in">export</span> NODE_LIST_URL=&lt;Full URL to node list (default: turtlecoin-nodes-json)&gt;</code></pre>
+				<pre><code class="language-sh"><span style="color: #0000FF">export</span><span style="color: #000000"> NODE_HISTORY_DAYS=&lt;</span><span style="color: #008000"># of days to keep history (default: 6 hours)&gt;</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> NODE_UPDATE_INTERVAL=&lt;</span><span style="color: #008000"># of seconds between updating node list (default: 1 hour)&gt;</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> NODE_POLLING_INTERVAL=&lt;</span><span style="color: #008000"># of seconds between checking nodes (default: 120s)&gt;</span>
+<span style="color: #0000FF">export</span><span style="color: #000000"> NODE_LIST_URL=&lt;Full URL to node list (default: turtlecoin-nodes-json)&gt;</span>
+</code></pre>
 				<a href="#as-a-module-in-your-app" id="as-a-module-in-your-app" style="color: inherit; text-decoration: none;">
 					<h3>As a Module in your App</h3>
 				</a>
-				<pre><code class="language-sh">yarn add @turtlecoin/node-monitor</code></pre>
+				<pre><code class="language-sh"><span style="color: #000000">yarn add @turtlecoin/node-monitor</span>
+</code></pre>
 				<a href="#sample-code" id="sample-code" style="color: inherit; text-decoration: none;">
 					<h4>Sample Code</h4>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { NodeMonitorDB, getDatabase } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@turtlecoin/node-monitor&#x27;</span>;
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">NodeMonitorDB</span><span style="color: #000000">, </span><span style="color: #001080">getDatabase</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@turtlecoin/node-monitor&#039;</span><span style="color: #000000">;</span>
 
-(<span class="hljs-keyword">async</span>() =&gt; {
-  <span class="hljs-keyword">const</span> database = <span class="hljs-keyword">await</span> getDatabase();
+<span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000">() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">database</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">getDatabase</span><span style="color: #000000">();</span>
 
-  <span class="hljs-keyword">const</span> StatsDatabase = <span class="hljs-keyword">new</span> NodeMonitorDB(database);
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">StatsDatabase</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NodeMonitorDB</span><span style="color: #000000">(</span><span style="color: #001080">database</span><span style="color: #000000">);</span>
 
-  <span class="hljs-keyword">const</span> stats = <span class="hljs-keyword">await</span> StatsDatabase.stats();
-})();</code></pre>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">stats</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">StatsDatabase</span><span style="color: #000000">.</span><span style="color: #795E26">stats</span><span style="color: #000000">();</span>
+<span style="color: #000000">})();</span>
+</code></pre>
 				<a href="#author" id="author" style="color: inherit; text-decoration: none;">
 					<h2>Author</h2>
 				</a>
@@ -165,11 +168,8 @@ yarn start</code></pre>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-namespace">
-						<a href="modules/interfaces.html">Interfaces</a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -182,7 +182,7 @@ yarn start</code></pre>
 						<a href="classes/nodemonitordb.html" class="tsd-kind-icon">Node<wbr>MonitorDB</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#getdatabase" class="tsd-kind-icon">get<wbr>Database</a>
+						<a href="modules.html#getdatabase" class="tsd-kind-icon">get<wbr>Database</a>
 					</li>
 				</ul>
 			</nav>
@@ -198,7 +198,7 @@ yarn start</code></pre>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>
